@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="theme-color" content="#6355e8">
+<link href="https://simsek.cf/api2/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://simsek.cf/api2/css/simple-sidebar.css" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://use.fontawesome.com/d1341f9b7a.js"></script>
+<link rel='icon' href='<%= bot.user.avatarURL %>'>
+<title><%= bot.user.username %></title>
+  
+  <style>
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+ 
+.sidebar a.active {
+  background-color: #18acce;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+</style>
+  
+  <% var sahip = ["495825025207894016","491231235801088000","384385666345336832"] %>
+
+<div class="sidebar">
+              <a id="anasayfa" class="active" href="/">Ana Sayfa</a>
+      <% if (!user) { %>
+              <a id="giris" href="/giris">Giriş Yap</a>
+      <% } else { %>
+                 <% if(sahip.includes(user.id)) { %>
+                        <a id="admin" href="/admin">Admin Paneli</a>
+	               <% } %> 
+              <a id="panel" href="/panel">Yönetim Paneli</a>
+              <a id="cikis" href="/cikis">Çıkış Yap</a>
+      <% } %>   
+</div>
+  
+<div class="content"><br><br>

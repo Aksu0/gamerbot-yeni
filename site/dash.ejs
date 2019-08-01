@@ -1,0 +1,41 @@
+<%- include('ek/header', {bot, user, path}) %>
+
+<div align="center">
+<br><br><div class="justify-content-md-center"><h2 style="color: BLUE;">Yönetilecek Sunucunuzu Seçiniz:</h2></div><br><br><center>
+  
+<% user.guilds.forEach(guild => { 
+			const permsOnGuild = new perms(guild.permissions);
+			if(!permsOnGuild.has("MANAGE_GUILD")) return;
+      if(!bot.guilds.get(guild.id)) return;
+
+  var guildicon;
+  if(guild.icon) {
+    guildicon = `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png`
+  } else {
+    guildicon = "https://cdn.discordapp.com/attachments/553228947656278016/604653275144388648/gamerbot-avatar.png"
+  }
+    
+%>
+  
+<div class="card text-white bg-light" style="display: inline-block; width: 17rem;">
+          <div class="card-header"><a href="/panel/<%= guild.id %>/yonet"><img src="<%= guildicon %>"% style="width: 100%;"></a></div>
+    
+  <% 
+  var issm = ""
+  var isim = []
+  var i = guild.name.split("") 
+  i.forEach(() => isim.push(i))
+  
+  if(isim.length > 13) issm = guild.name.substring(0,13) + "..."
+  else issm = guild.name
+  %>
+  
+       <div class="card-body">
+            <h5 class="card-title">
+              <a href="/panel/<%= guild.id %>"><%= issm %></a>
+                  </h5>
+                  <button type="button" onclick="window.location.href='/panel/<%= guild.id %>'" class="btn btn-primary" style="display: inline-block; width: auto;">Yönet</button>
+                </div>
+              </div> 
+		<% }) %>
+</div></div></center>

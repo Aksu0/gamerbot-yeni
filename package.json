@@ -1,0 +1,42 @@
+{
+  "scripts": {
+    "start": "node gamerbot.js"
+  },
+  "engines": {
+    "node": "8.4.0"
+  },
+  "dependencies": {
+    "cpu-stat": "^2.0.1",
+    "discord.js": "^11.5.1",
+    "ejs": "^2.6.2",
+    "express": "^4.16.4",
+    "express-session": "^1.16.1",
+    "fs": "^0.0.2",
+    "generate-password": "^1.4.1",
+    "hastebin-gen": "^2.0.5",
+    "helmet": "^3.20.0",
+    "jimp": "^0.6.4",
+    "level-session-store": "^2.2.0",
+    "marked": "^0.6.3",
+    "moment": "^2.24.0",
+    "moment-duration-format": "^2.2.2",
+    "node-opus": "^0.3.2",
+    "os": "^0.1.1",
+    "passport": "^0.4.0",
+    "passport-discord": "^0.1.3",
+    "quick.db": "^7.0.0-b22",
+    "request": "^2.88.0",
+    "ritararycode": "^0.0.4",
+    "simple-youtube-api": "^5.2.1",
+    "ytdl-core": "^0.29.3",
+    "dateformat": "^3.0.3",
+    "node-superfetch": "^0.1.9",
+    "common-tags": "^1.8.0",
+    "canvas": "^2.6.0",
+    "snekfetch": "^4.0.4",
+    "dblapi.js": "^2.3.0",
+    "twemoji": "^12.1.1",
+    "express-ws": "^4.0.0",
+    "http-proxy": "^1.17.0"
+  }
+}

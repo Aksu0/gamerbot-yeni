@@ -1,0 +1,27 @@
+<%- include('ek/header', {bot, user, path}) %>
+
+<div align="center">
+<div class="justify-content-md-center"><h2 style="color: BLUE;">Admin Panel:</h2></div><br><br><center>
+  
+<% bot.guilds.forEach(guild => { 
+  
+  var guildicon;
+  if(guild.icon) {
+    guildicon = `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png`
+  } else {
+    guildicon = "https://cdn.discordapp.com/attachments/553228947656278016/604653275144388648/gamerbot-avatar.png"
+  }
+    
+%>
+<div class="card text-white bg-light" style="display: inline-block; width: 17rem;">
+          <div class="card-header"><a href="/panel/<%= guild.id %>/yonet"><img src="<%= guildicon %>" style="width: 100%;"></a></div>
+    
+       <div class="card-body">
+            <h5 class="card-title">
+              <a href="/panel/<%= guild.id %>"><%= guild.name %></a>
+                  </h5>
+                  <button type="button" onclick="window.location.href='/panel/<%= guild.id %>'" class="btn btn-primary" style="display: inline-block; width: auto;">Yönet</button>
+                </div>
+              </div> 
+		<% }) %>
+</div></div></center>

@@ -1,0 +1,103 @@
+<%- include('./ek/header', {bot, user, path, guild, db}) %><br><br>
+<div class="container">
+	<div class="row justify-content-md-center">
+		<h2 style="color: #fffff;">Sunucu Yönetimi</h2>
+  </div>
+	<div class="row">
+		<div class="col col-4">
+		</div>
+		
+  <%    
+    
+    var prefixxxx = db.get(`sunucular.${guild.id}.prefix`)
+    if(!prefixxxx) prefixxxx = "g!"
+    
+    var otorol = []
+    var otoroldb = db.fetch(`sunucular.${guild.id}.otorol.kanal`)
+    
+    guild.channels.forEach(a => {
+      if(!a.permissionsFor(guild.me).has("MANAGE_WEBHOOKS")) return;
+      else { otorol.push(a) }
+    })
+  
+////////////////////////////////////////////////////////////////////////////////////////
+    
+    var otorol = []
+    var otoroldb = db.fetch(`sunucular.${guild.id}.otorol.rol`)
+    
+    guild.roles.forEach(a => {
+      if(!a.editable) return;
+      else if(a.id === guild.id) return;
+      else { otorol.push(a) }
+    })
+    
+////////////////////////////////////////////////////////////////////////////////////////
+    
+    var modlog = []
+    var modlogdb = db.fetch(`sunucular.${guild.id}.modlog`)
+    
+    guild.channels.forEach(a => {
+      if(!a.permissionsFor(guild.me).has("MANAGE_WEBHOOKS")) return;
+      else if(a.type === "voice" || a.type === "category") return;
+      else { modlog.push(a) }
+    })
+    
+////////////////////////////////////////////////////////////////////////////////////////
+    
+    var sayac = []
+    var sayacsa = ""
+    var sayackanaldb = db.fetch(`sunucular.${guild.id}.sayac.kanal`)
+    var sayacsayidb = db.fetch(`sunucular.${guild.id}.sayac.sayi`)
+    
+    if(!sayacsayidb) sayacsa = "Ayarlı Değil"
+    else sayacsa = sayacsayidb
+    
+    guild.channels.forEach(a => {
+      if(!a.permissionsFor(guild.me).has("MANAGE_WEBHOOKS")) return;
+      else { sayac.push(a) } 
+    })
+    
+////////////////////////////////////////////////////////////////////////////////////////
+    
+    %>
+    
+    
+		<div class="col">
+    <li class="list-group-item" style="padding: 0; background-color: #0DAED6;">
+      <div class="input-group-addon" style="width: 150px; text-align: center; margin: 5.5px; color: #ffffff; font-size: 15px;"></div></li>
+			<form method="post"><br>
+
+<div class="input-group"><input type="text" id="prefix" name="prefix" class="form-control" placeholder="Prefix şu anda: <%= prefixxxx %>"></div><br>
+           
+<div class="input-group"><select id="otorol" name="otorol" class="form-control" >
+   <option disabled selected>Otorol Rolü Ayarla</option>
+  <% otorol.forEach(a => { %>
+   <option value="<%= a.name %>" ><%= a.name %></option>
+  <% }) %></select></div><br>
+             
+<div class="input-group"><select id="modlog" name="modlog" class="form-control" >
+   <option disabled selected>Kayıt Kanalını Ayarla</option>
+  <% modlog.forEach(a => { %>
+   <option value="<%= a.name %>"><%= a.name %></option>
+  <% }) %></select></div><br>
+        
+<div class="input-group"><select id="sayac" name="sayac" class="form-control" >
+   <option disabled selected>Sayaç Kanalını Ayarla</option>
+  <% sayac.forEach(a => { %>
+   <option value="<%= a.name %>" ><%= a.name %></option>
+  <% }) %></select></div><br>
+        
+<div class="input-group"><input type="number" id="sayacs" name="sayacs" class="form-control" placeholder="Sayaç Kişi Sayısı Şu Anda: <%= sayacsa %>"></div><br>
+        
+   <input type="submit" class="btn btn-warning" name="gonder" value="Gönder">
+      </form>
+ 
+           
+            
+						</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+

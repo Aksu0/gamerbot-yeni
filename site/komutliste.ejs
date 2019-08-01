@@ -1,0 +1,34 @@
+<%- include('ek/header', {bot,user,path}) %>
+<div align="center">
+<%
+
+const help = {};
+	bot.commands.forEach((command) => {
+		const cat = command.conf.kategori;
+    if(!cat) return;
+    if(cat === "Sahip") return;
+		if (!help.hasOwnProperty(cat)) help[cat] = [];
+		help[cat].push(command);
+	});
+	String.prototype.capitalize = function() {
+		return this.charAt(0).toUpperCase() + this.slice(1);
+	}
+%>
+
+<% for(const kategori in help) { %> 
+<br><br><br><br><br><h5><%= kategori %> adlı kategori komutları: </h5>
+<% for(const command of help[kategori]) { %>
+<% var aliases;
+ if(command.conf.aliases.length === 0) aliases = "Bulunmuyor"
+ else aliases = command.conf.aliases.toString()
+  %>
+  <div class="card text-white bg-light mb-3" style="display: inline-block; width: 17rem;">
+<div class="card-body">
+<p style="color: BLACK">Komut adı: <%= command.help.name %></p>
+<p class="card-title" style="color:BLACK">
+Kısaltmalar: <%= aliases %> 
+</p>
+</div></div>
+<% }} %>
+  
+</div>

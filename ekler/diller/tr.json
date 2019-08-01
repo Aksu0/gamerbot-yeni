@@ -1,0 +1,89 @@
+{
+  "gecikme": "Bot Gecikmesi",
+  "yardım": "Yardım",
+  "doğrukullanım": "deneme",
+  "sahip": "Bot Sahibi",
+  "koddil": "Bot Kodlama Dili",
+  "linkler": "Bot Linkleri",
+  "statss": "Bot Kullanım Bilgileri",
+  "kullanıcısay":"Bot Kullanıcı Sayısı",
+  "sunucusay":"Bot Sunucu Sayısı",
+  "uptime": "Açık Kalma Süresi",
+  "gün": "Gün",
+  "dakika": "Dakika",
+  "saat": "Saat",
+  "saniye": "Saniye",
+  "sball": {
+  "header": "🎱 | Makine Çalıştı!",
+  "mesajlar": [
+    "Hayır",
+    "Evet",
+    "Belki",
+    "Olabilir"
+  ]},
+  "ceviri": {
+    "mdil":"Çevirilen Metnin Dili",
+    "çdil":"Metnin Çevirildiği Dil",
+    "çmetin":"Çeviri Sonucu"
+  },
+  "yetki": {
+  "atma":":warning: | Üzgünüm, `Üyeleri At` Yetkinizin Bulunması Gerekiyor",
+  "yasaklama": ":warning: | Üzgünüm, `Üyeleri Yasakla` Yetkinizin Bulunması Gerekiyor",
+  "syönet":":warning: | Üzgünüm, `Sunucuyu Yönet` Yetkinizin Bulunması Gerekiyor",
+  "yönetici": ":warning: | Üzgünüm, `Yönetici` Yetkinizin Bulunması Gerekiyor",
+  "sahip": ":warning: | Üzgünüm. Bu Komutu Sadece Yapımcım Kullanabilir!"
+  },
+  "müzik": {
+    "şarkıgir": ":x: | Bir Şarkı Girmelisin",
+    "seskanal": ":x: | Lütfen herhangi bir sesli kanala katılınız.",
+    "izing":":x: | Herhangi bir sesli kanala katılabilmek için yeterli iznim yok.",
+    "izink":":x: | Sunucuda Konuşma Yetkim Yok",
+    "oekle":"İsimli oynatma listesi kuyruğa eklendi.",
+    "yokmoruq":"Aradığınız Şarkı YouTube'de Bulunamadı!",
+    "eklendi": "isimli şarkı kuyruğa eklendi",
+    "akanal":":x: | Bot ile aynı kanalda değilsiniz.",
+    "şarkıçalmıyor":":x: | Şuanda sunucuda herhangi bir şarkı çalmıyor.",
+    "geçildi":":white_check_mark: | Şarkı başarıyla geçildi.",
+    "durduruldu":":white_check_mark: | Şarkı kapatıldı, oynatma listesi temizlendi.",
+    "sesyüz":":x: | Ayarlayacağınız Ses Seiyesi 0-100 arasında olmak zorundadır",
+    "ses":"Şuanki Ses Seviyesi:",
+    "ases":"Ayarlanan Ses Seviyesi:",
+    "np":"Şu Anda Çalan Şarkı",
+    "başlık":"Başlık",
+    "süre":"Süre",
+    "kuyruk":"▶ | Şarkı Kuyruğu",
+    "sayfa":"Sayfa",
+    "duraklat":":white_check_mark: | Şarkı başarıyla duraklatıldı.",
+    "devamet":":white_check_mark: | Şarkı başarıyla devam ettiriliyor...",
+    "tekrar":":white_check_mark: | Şarkı tekrar moduna geçirildi. Kapatmak için komutu tekrar yazınız",
+    "tekrark":":white_check_mark: | Şarkı tekrar modu kapatıldı",
+    "ilerlet":":x: | Kaçıncı Dakikaya İlerleteceksin?",
+    "ilerlett":{
+      "b":":white_check_mark: | Şarkı ",
+      "s":"'inci dakikaya ilerletildi!"
+    },
+    "bitti":":white_check_mark: | Çalınan Şarkı Sona Erdi!",
+    "oynatılıyor":"adlı şarkı oynatılıyor"
+  },
+  "yardım": {
+    "komutyardımı": " adlı adlı komutun;",
+    "komutisim": "İsmi",
+    "kısaltma": "Alternatifler,",
+    "açıklama": "Açıklaması",
+    "kullanım": "Kullanımı",
+    "yetkii": "Gerekli yetki seviyesi",
+    "kategori": "Kategorisi",
+    "yardım": "yardım ",
+    "komutsayısı": "Komut Sayısı: ",
+    "caty": " adlı kategorinin komutları",
+    "kategoriler": "Komut Kategorileri",
+    "bulunamadı": "Aradığınız isimde bir komut bulunamadı",
+    "yetki": {
+      "herkes": "Yetki Gerektirmez",
+      "at": "Üyeleri Atma Yetkisi Gerektirir",
+      "yasakla": "Üyeleri Yasakla Yetkisi Gerektirir",
+      "syönet": "Sunucuyu Yönet Yetkisi Gerektirir",
+      "yönet": "Yönetici Yetkisi Gerektirir",
+      "sahip": "Bot Sahibi Olmanız Gerekir"
+  }}
+}
