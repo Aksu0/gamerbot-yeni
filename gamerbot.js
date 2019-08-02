@@ -9,7 +9,9 @@ client.login(ayarlar.token)
 const db = require('quick.db')
 var resimler = {
   "cikis": "https://cdn.discordapp.com/attachments/606141048728846336/606141265360322561/New_Project_1_2_1.png",
-  "giris": "https://cdn.discordapp.com/attachments/606141048728846336/606141260243140628/New_Project_1_1.png"
+  "giris": "https://cdn.discordapp.com/attachments/606141048728846336/606141260243140628/New_Project_1_1.png",
+  "cikismanzara": "https://cdn.discordapp.com/attachments/606141048728846336/606742859177132032/Background_2.png",
+  "girismanzara": "https://cdn.discordapp.com/attachments/606141048728846336/606742856811413504/Background_1.png"
 }
 var request = require('request');
 const prefix = ayarlar.prefix
