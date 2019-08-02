@@ -75,6 +75,10 @@ var fetch = db.get(`sunucular.${member.guild.id}.giriscikis.kanal`)
 if(!fetch) return;
 var kanal = client.channels.get(fetch)
 if(!kanal) return;
+var tur = db.get(`sunucular.${member.guild.id}.giriscikis.tur`)
+if(!tur) return;
+
+if(tur === "klasik") {
 var avatarr = member.user.displayAvatarURL
 var { createCanvas, loadImage } = require('canvas')
 var canvas = createCanvas(1238,395)
@@ -91,7 +95,33 @@ ctx.textAlign = "right";
 ctx.fillText(`${member.user.tag}`, 1200, 250)
   
 kanal.send(new Discord.Attachment(canvas.toBuffer(), "gamerbot-giris.png"))
-})})})
+})})
+} else if(tur === "manzara") {
+var avatarr = member.user.displayAvatarURL
+var { createCanvas, loadImage } = require('canvas')
+var canvas = createCanvas(960, 635)
+var ctx = canvas.getContext('2d');
+loadImage(resimler.girismanzara).then(giris => {
+loadImage(avatarr).then(avatar => {
+ctx.drawImage(giris, 0, 0, 960, 635);
+ctx.drawImage(avatar, 55, 90, 200, 200)
+
+var b = []
+member.user.username.split("").forEach(a => b.push(a))
+var isim;
+if(b.length > 20) isim = member.user.tag.substring(0,17) + "#" + member.user.discriminator
+else isim = member.user.tag
+  
+ctx.beginPath()
+ctx.fillStyle = `#ffffff`;
+ctx.font = '30px Impact';
+ctx.textAlign = "left";
+ctx.fillText(`${isim}`, 350, 180)
+  
+kanal.send(new Discord.Attachment(canvas.toBuffer(), "gamerbot-giris.png"))
+})})        
+} 
+})
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -100,7 +130,10 @@ var fetch = db.get(`sunucular.${member.guild.id}.giriscikis.kanal`)
 if(!fetch) return;
 var kanal = client.channels.get(fetch)
 if(!kanal) return;
-  
+var tur = db.get(`sunucular.${member.guild.id}.giriscikis.tur`)
+if(!tur) return;
+
+if(tur === "klasik") {
 var avatarr = member.user.displayAvatarURL
 var { createCanvas, loadImage } = require('canvas')
 var canvas = createCanvas(1238,395)
@@ -117,7 +150,34 @@ ctx.textAlign = "right";
 ctx.fillText(`${member.user.tag}`, 1200, 250)
   
 kanal.send(new Discord.Attachment(canvas.toBuffer(), "gamerbot-cikis.png"))
-})})})
+})})
+
+} else if(tur === "manzara") {
+  
+var avatarr = member.user.displayAvatarURL
+var { createCanvas, loadImage } = require('canvas')
+var canvas = createCanvas(960, 635)
+var ctx = canvas.getContext('2d');
+loadImage(resimler.cikismanzara).then(giris => {
+loadImage(avatarr).then(avatar => {
+ctx.drawImage(giris, 0, 0, 960, 635);
+ctx.drawImage(avatar, 55, 90, 200, 200)
+
+var b = []
+member.user.username.split("").forEach(a => b.push(a))
+var isim;
+if(b.length > 20) isim = member.user.tag.substring(0,17) + "#" + member.user.discriminator
+else isim = member.user.tag
+  
+ctx.beginPath()
+ctx.fillStyle = `#ffffff`;
+ctx.font = '30px Impact';
+ctx.textAlign = "left";
+ctx.fillText(`${isim}`, 350, 180)
+  
+kanal.send(new Discord.Attachment(canvas.toBuffer(), "gamerbot-cikis.png"))
+})})
+}})
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
