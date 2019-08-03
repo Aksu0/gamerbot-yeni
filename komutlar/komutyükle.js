@@ -2,10 +2,11 @@ exports.run = async (client, message, args, dil, renk) => {
 var komut = args[0]
 if(!komut) return message.channel.send(dil.doğrukullanım)
   
-client.load(komut + ".js").catch(e => {
+client.load(komut).catch(e => {
+  if(!e) { message.channel.send(client.emojiler.evet + "| komut yüklendi") }
   if(e) return message.channel.send(':warning: | Bir Hata oluştu\n' + e.message)
-  else return message.channel.send(client.emojiler.evet + "| komut yenilendi")
 })
+
 }
 
 exports.conf = {

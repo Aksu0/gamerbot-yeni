@@ -6,13 +6,9 @@ var cmd;
 if(client.commands.has(komut)) cmd = client.commands.get(komut).help.name
 else if(client.aliases.has(komut)) cmd = client.aliases.get(komut)
 else return message.channel.send(':warning: | Komut bulunamadı')
-
-try { 
+ 
 client.reload(cmd)
- } catch(e) {
-  if(e) { message.channel.send(':warning: | Bir Hata oluştu'); console.warn(e) }
-  else return message.channel.send(client.emojiler.evet + "| komut yenilendi")
-}
+message.channel.send(client.emojiler.evet + "| komut yenilendi")
 }
 
 exports.conf = {
