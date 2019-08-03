@@ -21,7 +21,7 @@ exports.conf = {
   enabled: true,
   guildOnly: true,
   aliases: ["mod-log"],
-  permLevel: 0,
+  permLevel: 4,
   kategori: "Moderasyon"
 };
 exports.help = {

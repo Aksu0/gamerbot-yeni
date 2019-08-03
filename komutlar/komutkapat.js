@@ -19,7 +19,7 @@ exports.conf = {
   enabled: true,
   guildOnly: true,
   aliases: ["kk"],
-  permLevel: 5,
+  permLevel: 6,
   kategori: "Sahip"
 };
 exports.help = {

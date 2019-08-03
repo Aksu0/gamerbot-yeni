@@ -25,7 +25,7 @@ message.channel.send(`Yazma süre limiti **${limit}** saniye olarak ayarlanmış
   enabled: true,
   guildOnly: false,
   aliases: ["slow-mode", "slowmode", "yavas-mod", 'yavasmod', 'yavaşmod'],
-  permLevel: 3,
+  permLevel: 4,
     kategori: "Moderasyon"
 };
 

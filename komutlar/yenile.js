@@ -10,7 +10,7 @@ exports.conf = {
   enabled: true,
   guildOnly: true,
   aliases: ["reboot"],
-  permLevel: 5,
+  permLevel: 6,
   kategori: "Sahip"
 };
 exports.help = {

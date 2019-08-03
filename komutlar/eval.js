@@ -33,7 +33,7 @@ exports.conf = {
     enabled: true,
     guildOnly: true,
     aliases: ['eval','evsat'],
-    permLevel: 5,
+    permLevel: 6,
     kategori: "Sahip"
 }
 

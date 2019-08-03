@@ -23,7 +23,7 @@ exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: ["gç"],
-  permLevel: 3,
+  permLevel: 4,
   kategori: "Moderasyon"
 };
 

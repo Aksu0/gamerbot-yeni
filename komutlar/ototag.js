@@ -19,7 +19,7 @@ exports.conf = {
   enabled: true,
   guildOnly: true,
   aliases: ['ototag'],
-  permLevel: 3,
+  permLevel: 4,
   kategori: "Moderasyon"
 };
 

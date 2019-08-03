@@ -49,7 +49,7 @@ exports.conf = {
   enabled: true,
   guildOnly: true,
   aliases: ['kick'],
-  permLevel: 1,
+  permLevel: 2,
   kategori: "Moderasyon"
 };
 

@@ -56,7 +56,7 @@ exports.conf = {
   enabled: true,
   guildOnly: true,
   aliases: ['ban'],
-  permLevel: 2,
+  permLevel: 3,
   kategori: "Moderasyon"
 };
 

@@ -42,7 +42,7 @@ exports.conf = {
     guildOnly: true, 
     aliases: [],
     permLevel: 0,
-    kategori: "Kullanıcı"
+    kategori: "Sahip"
   };
   
   exports.help = {

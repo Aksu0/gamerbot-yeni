@@ -24,7 +24,7 @@ exports.conf = {
  enabled: true,
  guildOnly: false,
  aliases: ["öke","özelkomutekle"],
- permLevel: 3,
+ permLevel: 4,
  kategori: "Özel-Komut"
 };
 
