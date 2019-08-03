@@ -503,7 +503,7 @@ client.on('message', message => {
 var antiraid = db.fetch(`sunucular.${message.guild.id}.spamkoruma`)
 if(!antiraid) return;
 if(message.author.bot) return;
-if(client.elevation(message) !== 0) return;
+if(client.elevation(message) > 0) return;
 var b = []
 var aut = []
 setTimeout(() => {

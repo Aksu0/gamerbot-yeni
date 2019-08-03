@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const db = require('quick.db')
 
-exports.run = (client, message, args, renk, dil) => {
+exports.run = (client, message, args, dil) => {
 var zaman = new Date().getTime()
 var sebep = args.join(" ")
 if(!sebep) return message.channel.send(dil.doğrukullanım)
