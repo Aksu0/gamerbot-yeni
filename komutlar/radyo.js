@@ -17,7 +17,7 @@ var radyolar = [
 ]
 
 radyolar.forEach(a => risim.push(a.isim))
-if(!risim.includes(istek)) return message.channel.send('**Kullanılabilir radyolar:** ' + risim.join("FM ,"))
+if(!risim.includes(istek + "FM")) return message.channel.send('**Kullanılabilir radyolar:** ' + risim.join("FM ,") +"FM")
 var link;
 var yt;
 radyolar.forEach(a => {
