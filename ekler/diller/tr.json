@@ -27,6 +27,7 @@
     "çmetin":"Çeviri Sonucu"
   },
   "yetki": {
+  "mesajy":":warning: | Üzgünüm, `Mesajları Yönet` yetkinizin bulunması gerekiyor",
   "atma":":warning: | Üzgünüm, `Üyeleri At` Yetkinizin Bulunması Gerekiyor",
   "yasaklama": ":warning: | Üzgünüm, `Üyeleri Yasakla` Yetkinizin Bulunması Gerekiyor",
   "syönet":":warning: | Üzgünüm, `Sunucuyu Yönet` Yetkinizin Bulunması Gerekiyor",
@@ -79,6 +80,7 @@
     "kategoriler": "Komut Kategorileri",
     "bulunamadı": "Aradığınız isimde bir komut bulunamadı",
     "yetki": {
+      "mesajy":"Mesajları yönet",
       "herkes": "Yetki Gerektirmez",
       "at": "Üyeleri Atma Yetkisi Gerektirir",
       "yasakla": "Üyeleri Yasakla Yetkisi Gerektirir",

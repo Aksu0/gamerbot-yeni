@@ -32,11 +32,11 @@ module.exports = async message => {
   }
   if (cmd) {
     if (cmd.conf.permLevel > perms) {
-      if(cmd.conf.permLevel === 1) return message.channel.send(dil.yazılar.yetki.atma)
-      if(cmd.conf.permLevel === 2) return message.channel.send(dil.yazılar.yetki.yasaklama)
-      if(cmd.conf.permLevel === 3) return message.channel.send(dil.yazılar.yetki.syönet)
-      if(cmd.conf.permLevel === 4) return message.channel.send(dil.yazılar.yetki.yönetici)
-      if(cmd.conf.permLevel === 5) return message.channel.send(dil.yazılar.yetki.sahip)
+      if(cmd.conf.permLevel === 1) return message.channel.send(dil.yazılar.yetki.mesajy)
+      if(cmd.conf.permLevel === 2) return message.channel.send(dil.yazılar.yetki.atma)
+      if(cmd.conf.permLevel === 3) return message.channel.send(dil.yazılar.yetki.yasaklama)
+      if(cmd.conf.permLevel === 4) return message.channel.send(dil.yazılar.yetki.syonet)
+      if(cmd.conf.permLevel === 5) return message.channel.send(dil.yazılar.yetki.yonetici)
     } else return cmd.run(client, message, params, dil, renk, dbl, perms);
   }
 
