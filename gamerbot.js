@@ -504,14 +504,13 @@ client.on('message', message => {
 var antiraid = db.fetch(`sunucular.${message.guild.id}.spamkoruma`)
 if(!antiraid) return;
 if(message.author.bot) return;
-//if(client.elevation(message) > 0) return;
 var b = []
 var aut = []
 setTimeout(() => {
 message.channel.fetchMessages({ limit: 10 }).then(m => {
 m.forEach(a => {
 if(m.filter(v => v.content === a.content).size > m.size / 2) {
-if(client.elevation(m) !== 0) return;
+//if(client.elevation(m) !== 0) return;
 b.push(a)
 aut.push(a.author)
 }})
