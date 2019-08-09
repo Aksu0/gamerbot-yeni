@@ -13,26 +13,47 @@ const youtube = new YouTube(keyler[index])
 const queue = new Map();
 
 client.on("message", async message => {
-  let command = message.content.split(' ')[0].slice(ayarlar.prefix.length);
-  const dil = (require('./ekler/dil.js')(message, command, ayarlar.prefix))
+ // let command = message.content.split(' ')[0].slice(ayarlar.prefix.length);
+  //const dil = (require('./ekler/dil.js')(message, command, ayarlar.prefix))
 if (message.author.bot) return;
-
  
   var prefix = db.fetch(`sunucular.${message.guild.id}.prefix`)
   if(!prefix) prefix = "g!"
   
+  var params;
+  var command;
+  
+  var etiketpref = new RegExp(`^<@!?${client.user.id}>`);
+  var test = String(message.content.match(etiketpref))
+  var u;
+  if(message.content.startsWith(test)) {
+    command = message.content.split(' ')[1]
+    params = message.content.split(' ').slice(2);
+   // console.log(command + "/" + params)
+    u = "çalış"
+  } else {
+    if(message.content.startsWith(prefix)) {
+    command = message.content.split(' ')[0].slice(prefix.length);
+    params = message.content.split(' ').slice(1);
+    u = "çalış"
+  }}
+  if(u !== "çalış") return;
+  
+  var dil = (require("./ekler/dil.js")(message, command, prefix))
+  
   var ck = db.get(`sunucular.${message.guild.id}.kanallar.${message.channel.id}.calismakanal`)
   if(ck === "aktif") return;
   
-  
-  var args = message.content.substring(prefix.length).split(" ");
-    if (!message.content.startsWith(prefix)) return;
+  var args = params
+  console.log(args)
+  //var args = message.content.substring(prefix.length).split(" ");
+  //  if (!message.content.startsWith(prefix)) return;
   var karaliste = db.get(`karaliste.${message.author.id}`)
   if(karaliste === "aktif") return message.channel.send(client.emojiler.hayır+ 'Üzgünüm karalistedesin!');
   var searchString = args.slice(1).join(' ');
   var url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
   var serverQueue = queue.get(message.guild.id);
-    switch (args[0].toLowerCase()) {
+    switch (args) {
     case "oynat":
     case "play":
     case "p":
