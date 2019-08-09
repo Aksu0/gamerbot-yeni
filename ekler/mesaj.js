@@ -24,6 +24,16 @@ module.exports = async message => {
   const DBL = require("dblapi.js");
   const dbl = new DBL(ayarlar.dbltoken, client);
   
+  var u;
+  if(message.content.startsWith(message.mentions.users.first())) {
+    if(message.mentions.users.first().id === client.user.id) { 
+    u = "çalış"
+  }} else {
+    if(message.content.startsWith(prefix)) {
+    u = "çalış"
+  }}
+  if(u !== "çalış") return;
+  
   let cmd;
   if (client.commands.has(command)) {
     cmd = client.commands.get(command);
