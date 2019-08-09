@@ -18,7 +18,6 @@ module.exports = async message => {
   if(message.content.startsWith(test)) {
     command = message.content.split(' ')[1]
     params = message.content.split(' ').slice(2);
-    console.log(command + "/" + params)
     u = "çalış"
   } else {
     if(message.content.startsWith(prefix)) {

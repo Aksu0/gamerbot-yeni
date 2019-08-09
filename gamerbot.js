@@ -241,12 +241,15 @@ client.on('message', message => {
   let command = message.content.split(' ')[0].slice(pref.length);
   var args = message.content.split(' ').slice(1);    
   if(message.channel.type === "dm") return;
+  if(client.commands.has(args[0])) return;
+  else if(client.aliases.has(args[0])) return;
+
+  var etiketpref = new RegExp(`^<@!?${client.user.id}>`);
+  var test = String(message.content.match(etiketpref))
   var u;
-  if(message.content.startsWith(message.mentions.users.first())) {
-    if(message.mentions.users.first().id === client.user.id) { 
-    if(!client.commands.has())
+  if(message.content.startsWith(test)) {
     u = "çalış"
-  }} else {
+  } else {
     if(command === "sor") { 
     if(message.content.startsWith(pref)) {
     u = "çalış"
