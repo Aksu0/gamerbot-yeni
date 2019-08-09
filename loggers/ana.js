@@ -109,5 +109,26 @@ const webhook = new Discord.WebhoooClient(web.id, web.token)
 require("./guildUpdate.js")(oldGuild, newGuild, Discord, webhook)
 
 })
+ 
+client.on("guildBanAdd", (user, guild) => {
+var webb = db.fetch(`sunucular.${guild.id}.modlog`)
+if(!webb) return;
+var web= JSON.parse(webb)
+const webhook = new Discord.WebhoooClient(web.id, web.token)
+
+require("./guildBanAdd.js")(user, Discord, webhook)
+
+}) 
+  
+client.on("guildBanRemove", (user, guild) => {
+var webb = db.fetch(`sunucular.${guild.id}.modlog`)
+if(!webb) return;
+var web= JSON.parse(webb)
+const webhook = new Discord.WebhoooClient(web.id, web.token)
+
+require("./guildBanRemove.js")(user, Discord, webhook)
+
+})
+  
   
 }
