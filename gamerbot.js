@@ -519,17 +519,17 @@ setTimeout(() => {
 message.channel.fetchMessages({ limit: 10 }).then(m => {
 m.forEach(a => {
 if(m.filter(v => v.content === a.content).size > m.size / 2) {
-if(member.hasPermission('BAN_MEMBERS')) return;
+message.guild.fetchMember(m.author).then(member2 => {
+if(member2.hasPermission('BAN_MEMBERS')) return;
 b.push(a)
 aut.push(a.author)
-}})
+})}})
 if(!b.includes(":warning: | Saldırgan botlar susturulacak.")) { işlem() }
 else {}
   
 function işlem() {
 
 if(b.length > 5) {
-  if(m.last().content !== m.first().content) return;
   message.channel.send(':warning: | Saldırgan botlar susturulacak.')
   aut.forEach(a => {
     message.channel.overwritePermissions(a, {
