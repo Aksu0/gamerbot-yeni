@@ -5,7 +5,7 @@ var renk = "ORANGE"
 module.exports = async message => {
   var prefix = db.get(`sunucular.${message.guild.id}.prefix`)
   if(!prefix) prefix = "g!"
-  if(!message.member) return false;
+  if(!message.guild) return false;
   let client = message.client;
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
