@@ -28,7 +28,7 @@ if (message.author.bot) return;
   var u;
   if(message.content.startsWith(test)) {
     command = message.content.split(' ')[1]
-    params = message.content.split(' ').slice(2);
+    params = message.content.split(' ').slice(1i);
    // console.log(command + "/" + params)
     u = "çalış"
   } else {
@@ -45,7 +45,7 @@ if (message.author.bot) return;
   if(ck === "aktif") return;
   
   var args = params
-  console.log(args)
+
   //var args = message.content.substring(prefix.length).split(" ");
   //  if (!message.content.startsWith(prefix)) return;
   var karaliste = db.get(`karaliste.${message.author.id}`)
@@ -53,7 +53,7 @@ if (message.author.bot) return;
   var searchString = args.slice(1).join(' ');
   var url = args[1] ? args[1].replace(/<(.+)>/g, '$1') : '';
   var serverQueue = queue.get(message.guild.id);
-    switch (args) {
+    switch (command) {
     case "oynat":
     case "play":
     case "p":
