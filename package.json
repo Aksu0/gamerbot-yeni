@@ -26,7 +26,7 @@
     "passport-discord": "^0.1.3",
     "quick.db": "^7.0.0-b22",
     "request": "^2.88.0",
-    "ritararycode": "^0.0.5",
+    "ritararycode": "^0.0.6",
     "simple-youtube-api": "^5.2.1",
     "ytdl-core": "^0.29.5",
     "dateformat": "^3.0.3",
