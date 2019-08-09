@@ -8,18 +8,19 @@ module.exports = async message => {
   if(!message.guild) return false;
   let client = message.client;
   if (message.author.bot) return;
-  let command;// = message.content.split(' ')[0].slice(prefix.length);
-  let params;// 
+  let command;
+  let params;
   let perms = client.elevation(message);
     
+  var etiketpref = new RegExp(`^<@!?${client.user.id}>`);
+  var test = String(message.content.match(etiketpref))
   var u;
-  if(message.content.startsWith(message.mentions.users.first())) {
-    if(message.mentions.users.first().id === client.user.id) { 
-    command = message.content.split(' ').slice(1)
+  if(message.content.startsWith(test)) {
+    command = message.content.split(' ')[1]
     params = message.content.split(' ').slice(2);
     console.log(command + "/" + params)
     u = "çalış"
-  }} else {
+  } else {
     if(message.content.startsWith(prefix)) {
     command = message.content.split(' ')[0].slice(prefix.length);
     params = message.content.split(' ').slice(1);

@@ -227,7 +227,7 @@ if (afk) { return message.channel.send(`:warning: | **${etiket.tag}** adlı kull
 })
 
 //////////////////////////////////////////////////////////////////////////////////////////////
-/*
+
 client.on('message', message => {
   var pref = db.fetch(`sunucular.${message.guild.id}.prefix`)
   if(!pref) pref = "g!"
@@ -244,6 +244,7 @@ client.on('message', message => {
   var u;
   if(message.content.startsWith(message.mentions.users.first())) {
     if(message.mentions.users.first().id === client.user.id) { 
+    if(!client.commands.has())
     u = "çalış"
   }} else {
     if(command === "sor") { 
@@ -261,7 +262,7 @@ request('https://simsekapi.cf/9F2oVMgUUM/sor?soru='+ encodeURIComponent(args.joi
         m.edit(veri.cevap)
     }
 });
-})})*/
+})})
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
