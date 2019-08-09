@@ -8,10 +8,25 @@ module.exports = async message => {
   if(!message.guild) return false;
   let client = message.client;
   if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
-  let command = message.content.split(' ')[0].slice(prefix.length);
-  let params = message.content.split(' ').slice(1);
+  let command;// = message.content.split(' ')[0].slice(prefix.length);
+  let params;// 
   let perms = client.elevation(message);
+    
+  var u;
+  if(message.content.startsWith(message.mentions.users.first())) {
+    if(message.mentions.users.first().id === client.user.id) { 
+    command = message.content.split(' ').slice(1)
+    params = message.content.split(' ').slice(2);
+    console.log(command + "/" + params)
+    u = "çalış"
+  }} else {
+    if(message.content.startsWith(prefix)) {
+    command = message.content.split(' ')[0].slice(prefix.length);
+    params = message.content.split(' ').slice(1);
+    u = "çalış"
+  }}
+  if(u !== "çalış") return;
+  
   const dil = (require('./dil.js')(message, command, prefix))
   var karaliste = db.get(`karaliste.${message.author.id}`)
   if(karaliste === "aktif") return false;
@@ -23,16 +38,6 @@ module.exports = async message => {
   
   const DBL = require("dblapi.js");
   const dbl = new DBL(ayarlar.dbltoken, client);
-  
-  var u;
-  if(message.content.startsWith(message.mentions.users.first())) {
-    if(message.mentions.users.first().id === client.user.id) { 
-    u = "çalış"
-  }} else {
-    if(message.content.startsWith(prefix)) {
-    u = "çalış"
-  }}
-  if(u !== "çalış") return;
   
   let cmd;
   if (client.commands.has(command)) {
