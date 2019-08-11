@@ -91,8 +91,8 @@ ctx.drawImage(avatar, 0, 0, 364, 395)
 ctx.beginPath()
 ctx.fillStyle = `#ffffff`;
 ctx.font = '50px Impact';
-ctx.textAlign = "right";
-ctx.fillText(`${member.user.tag}`, 1200, 250)
+ctx.textAlign = "left";
+ctx.fillText(`${member.user.tag}`, 400, 250)
   
 kanal.send(new Discord.Attachment(canvas.toBuffer(), "gamerbot-giris.png"))
 })})
@@ -146,8 +146,8 @@ ctx.drawImage(avatar, 0, 0, 364, 395)
 ctx.beginPath()
 ctx.fillStyle = `#ffffff`;
 ctx.font = '50px Impact';
-ctx.textAlign = "right";
-ctx.fillText(`${member.user.tag}`, 1200, 250)
+ctx.textAlign = "left";
+ctx.fillText(`${member.user.tag}`, 400, 250)
   
 kanal.send(new Discord.Attachment(canvas.toBuffer(), "gamerbot-cikis.png"))
 })})
