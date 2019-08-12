@@ -56,7 +56,7 @@ setInterval(() => {
 client.on('messageUpdate', (oldMsg, newMsg) => {
   var ck = db.get(`sunucular.${newMsg.guild.id}.kanallar.${newMsg.channel.id}.calismakanal`)
   if(ck === "aktif") return;
-  if(oldMsg === newMsg) return false;
+  if(oldMsg === newMsg) return;
   client.emit("message", newMsg);
 });
 
@@ -255,7 +255,7 @@ client.on('message', message => {
     u = "çalış"
   }}}
   if(u !== "çalış") return;
-  if(!args.join(" ") && command !== "sor") return message.channel.send(`Prefixim: **${pref}** \nYardım almak için **${pref}yardım**`)
+  if(!args.join(" ") && command !== "sor") return message.channel.send(`Prefixim: **${pref}** \nYardım almak için **${pref}yardım**\n\nBotu etiketleyerek de kullanabilirsiniz`)
   if(!args.join(" ") && command === "sor") return message.channel.send(`Hatalı Kullanım! Doğru Kullanıma Bakmak için ${prefix}yardım ${command}`)
   message.channel.send('<a:yukleniyor:593075459835691013> Yanıt Yükleniyor...').then(m => {
 request('https://simsekapi.cf/9F2oVMgUUM/sor?soru='+ encodeURIComponent(args.join(" ")), function (error, response, body) {
