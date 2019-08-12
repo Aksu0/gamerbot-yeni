@@ -15,7 +15,7 @@ exports.conf = {
   guildOnly: true,
   aliases: [],
   permLevel: 4,
-  kategori: "Koruma"
+  kategori: "Koruma-Sistem"
 };
 
 exports.help = {
