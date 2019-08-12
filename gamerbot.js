@@ -257,7 +257,7 @@ client.on('message', message => {
   if(u !== "çalış") return;
   if(!args.join(" ") && command !== "sor") return message.channel.send(`Prefixim: **${pref}** \nYardım almak için **${pref}yardım**\n\nBotu etiketleyerek de kullanabilirsiniz`)
   if(!args.join(" ") && command === "sor") return message.channel.send(`Hatalı Kullanım! Doğru Kullanıma Bakmak için ${prefix}yardım ${command}`)
-  message.channel.send('<a:yukleniyor:593075459835691013> Yanıt Yükleniyor...').then(m => {
+  message.channel.send('<a:yukleniyor:593075459835691013> Bakımdadır!')/*.then(m => {
 request('https://simsekapi.cf/9F2oVMgUUM/sor?soru='+ encodeURIComponent(args.join(" ")), function (error, response, body) {
     if (error) { m.edit(client.emojiler.hayır + "| Api kaynaklı bir hata oluştu!")}
     else if (!error) {
@@ -265,7 +265,9 @@ request('https://simsekapi.cf/9F2oVMgUUM/sor?soru='+ encodeURIComponent(args.joi
         m.edit(veri.cevap)
     }
 });
-})})
+})
+*/
+})
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
